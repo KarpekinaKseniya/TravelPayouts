@@ -8,6 +8,7 @@ class TravelPayoutsApplicationTests {
 
     @Test
     void contextLoads() {
+        TravelPayoutsApplication.main(new String[] {});
     }
 
 }

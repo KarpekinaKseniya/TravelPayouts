@@ -44,7 +44,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
-            <column name="title" value="Rentalcars"/>
+            <column name="title" value="RentalCars"/>
             <column name="description" value="Earn commissions on car rentals worldwide"/>
         </insert>
         <rollback>
