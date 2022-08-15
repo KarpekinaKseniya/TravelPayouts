@@ -1,13 +1,18 @@
 package com.self.education.travelpayouts.resource;
 
+import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.ResponseEntity.ok;
 
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.self.education.travelpayouts.api.ErrorResponse;
+import com.self.education.travelpayouts.api.UserRequest;
 import com.self.education.travelpayouts.api.UserResponse;
 import com.self.education.travelpayouts.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -33,5 +38,21 @@ public class UserResource {
     @GetMapping("/users")
     public ResponseEntity<List<UserResponse>> findAllUsers() {
         return ok(userService.findAllUsers());
+    }
+
+    //@formatter:off
+    @Operation(
+            summary = "Add new user",
+            description = "Endpoint for added new user",
+            responses = {
+                    @ApiResponse(responseCode = "201", description = "Created"),
+                    @ApiResponse(responseCode = "400", description = "Bad Request", content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
+                    @ApiResponse(responseCode = "409", description = "Conflict", content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
+                    @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
+            })
+    //@formatter:on
+    @PostMapping("/user")
+    public ResponseEntity<Long> createUser(@RequestBody @Valid final UserRequest request) {
+        return new ResponseEntity<>(userService.createNewUser(request), CREATED);
     }
 }

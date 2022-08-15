@@ -8,7 +8,9 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.only;
 import static org.mockito.MockitoAnnotations.openMocks;
+import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.ResponseEntity.ok;
+import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaRequest;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaResponse;
 
 import java.util.List;
@@ -42,6 +44,18 @@ class UserResourceTest {
         assertThat(actual, is(ok(expected)));
 
         then(userService).should(only()).findAllUsers();
+    }
+
+    @Test
+    void shouldCreateUserSuccess() {
+        final Long id = 43L;
+
+        given(userService.createNewUser(nabeelaRequest())).willReturn(id);
+
+        final ResponseEntity<Long> actual = resource.createUser(nabeelaRequest());
+        assertThat(actual, is(new ResponseEntity<>(id, CREATED)));
+
+        then(userService).should(only()).createNewUser(nabeelaRequest());
     }
 
     @Test

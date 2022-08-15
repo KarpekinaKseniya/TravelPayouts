@@ -1,6 +1,7 @@
 package com.self.education.travelpayouts.helper;
 
 import com.self.education.travelpayouts.api.ProgramResponse;
+import com.self.education.travelpayouts.api.UserRequest;
 import com.self.education.travelpayouts.api.UserResponse;
 import com.self.education.travelpayouts.domain.PartnershipPrograms;
 import com.self.education.travelpayouts.domain.Users;
@@ -67,11 +68,11 @@ public class TravelPayoutsHelper {
         //@formatter:on
     }
 
-    public static Users nabeelaEntity() {
+    public static Users.UsersBuilder nabeelaBuilder() {
         //@formatter:off
         return Users.builder().id(NABEELA_ID)
                 .name(NABEELA_NAME)
-                .email(NABEELA_EMAIL).build();
+                .email(NABEELA_EMAIL);
         //@formatter:on
     }
 
@@ -86,6 +87,14 @@ public class TravelPayoutsHelper {
     public static UserResponse nabeelaResponse() {
         //@formatter:off
         return UserResponse.builder()
+                .name(NABEELA_NAME)
+                .email(NABEELA_EMAIL).build();
+        //@formatter:on
+    }
+
+    public static UserRequest nabeelaRequest() {
+        //@formatter:off
+        return UserRequest.builder()
                 .name(NABEELA_NAME)
                 .email(NABEELA_EMAIL).build();
         //@formatter:on

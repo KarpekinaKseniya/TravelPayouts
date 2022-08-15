@@ -1,0 +1,68 @@
+plugins {
+    id "org.springframework.boot" version "2.7.2"
+    id "io.spring.dependency-management" version "1.0.12.RELEASE"
+    id "jacoco"
+    id "java"
+}
+
+group = "com.self.education"
+version = "0.0.1-SNAPSHOT"
+sourceCompatibility = "17"
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    swaggerVersion = "1.6.9"
+    liquibaseVersion = "4.14.0"
+    lombokVersion = "1.18.24"
+    mapstructVersion = "1.5.2.Final"
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.springframework.boot:spring-boot-starter-validation"
+    implementation "org.springdoc:springdoc-openapi-ui:${swaggerVersion}"
+    runtimeOnly "org.postgresql:postgresql"
+    implementation "org.liquibase:liquibase-core:${liquibaseVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testRuntimeOnly "org.hsqldb:hsqldb"
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'CLASS'
+            limit {
+                counter = 'BRANCH'
+                value = 'COVEREDRATIO'
+                minimum = 0.8
+            }
+            excludes = ["**/api/*", "**/domain/*"]
+        }
+    }
+}
+
+jacocoTestReport {
+    dependsOn test
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ["**/api/*", "**/domain/*"])
+        }))
+    }
+}

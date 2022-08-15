@@ -9,7 +9,8 @@ import static org.mockito.Mockito.only;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.MockitoAnnotations.openMocks;
-import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaEntity;
+import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaBuilder;
+import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaRequest;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaResponse;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.yisroelEntity;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.yisroelResponse;
@@ -48,24 +49,38 @@ class UserServiceTest {
 
     @Test
     void shouldFindAllUsersSuccess() {
-        final List<Users> users = List.of(yisroelEntity(), nabeelaEntity());
+        final List<Users> users = List.of(yisroelEntity(), nabeelaBuilder().build());
         final List<UserResponse> expected = List.of(yisroelResponse(), nabeelaResponse());
 
         given(userRepository.findAll()).willReturn(users);
         given(userMapper.transformEntityToResponse(yisroelEntity())).willReturn(yisroelResponse());
-        given(userMapper.transformEntityToResponse(nabeelaEntity())).willReturn(nabeelaResponse());
+        given(userMapper.transformEntityToResponse(nabeelaBuilder().build())).willReturn(nabeelaResponse());
 
         final List<UserResponse> actual = service.findAllUsers();
         assertThat(actual, is(expected));
 
         then(userRepository).should(only()).findAll();
         then(userMapper).should(times(1)).transformEntityToResponse(yisroelEntity());
-        then(userMapper).should(times(1)).transformEntityToResponse(nabeelaEntity());
+        then(userMapper).should(times(1)).transformEntityToResponse(nabeelaBuilder().build());
+    }
+
+    @Test
+    void shouldCreateNewUserSuccess() {
+        final Users newUser = nabeelaBuilder().id(null).build();
+
+        given(userMapper.transformRequestToEntity(nabeelaRequest())).willReturn(newUser);
+        given(userRepository.save(newUser)).willReturn(nabeelaBuilder().build());
+
+        final Long actual = service.createNewUser(nabeelaRequest());
+        assertThat(actual, is(nabeelaBuilder().build().getId()));
+
+        then(userMapper).should(only()).transformRequestToEntity(nabeelaRequest());
+        then(userRepository).should(only()).save(newUser);
     }
 
     @Test
     void shouldThrowExceptionWhenUserMapperReturnException() {
-        final List<Users> users = List.of(yisroelEntity(), nabeelaEntity());
+        final List<Users> users = List.of(yisroelEntity(), nabeelaBuilder().build());
         final Exception exception = new RuntimeException(ERROR_MESSAGE);
 
         given(userRepository.findAll()).willReturn(users);

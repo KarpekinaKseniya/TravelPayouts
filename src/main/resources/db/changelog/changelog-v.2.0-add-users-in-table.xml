@@ -6,6 +6,7 @@
       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet author="kkarpekina" id="insert_users">
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Mert Webb"/>
             <column name="email" value="arandal@gmail.com"/>
         </insert>
@@ -15,6 +16,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Yisroel Mcarthur"/>
             <column name="email" value="juliano@msn.com"/>
         </insert>
@@ -24,6 +26,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Nabeela Leech"/>
             <column name="email" value="loscar@yahoo.ca"/>
         </insert>
@@ -33,6 +36,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Farhana Paterson"/>
             <column name="email" value="druschel@comcast.net"/>
         </insert>
@@ -42,6 +46,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Benedict Drew"/>
             <column name="email" value="violinhi@icloud.com"/>
         </insert>
@@ -51,6 +56,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Tahir Frye"/>
             <column name="email" value="djupedal@yahoo.ca"/>
         </insert>
@@ -60,6 +66,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Danyaal Hackett"/>
             <column name="email" value="manuals@sbcglobal.net"/>
         </insert>
@@ -69,6 +76,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Anton Hail"/>
             <column name="email" value="debest@hotmail.com"/>
         </insert>
@@ -78,6 +86,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Milo Kenny"/>
             <column name="email" value="ghost@yahoo.com"/>
         </insert>
@@ -87,6 +96,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Katelyn Murillo"/>
             <column name="email" value="dmbkiwi@sbcglobal.net"/>
         </insert>
@@ -96,6 +106,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Austen Vo"/>
             <column name="email" value="bastian@gmail.com"/>
         </insert>
@@ -105,6 +116,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Nela Morgan"/>
             <column name="email" value="weazelman@hotmail.com"/>
         </insert>
@@ -114,6 +126,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Sabiha Spears"/>
             <column name="email" value="ismail@sbcglobal.net"/>
         </insert>
@@ -123,6 +136,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Ezekiel Hoover"/>
             <column name="email" value="jonathan@live.com"/>
         </insert>
@@ -132,6 +146,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Doris Wardle"/>
             <column name="email" value="agolomsh@sbcglobal.net"/>
         </insert>
@@ -141,6 +156,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Havin Alexander"/>
             <column name="email" value="iamcal@me.com"/>
         </insert>
@@ -150,6 +166,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Murtaza Cordova"/>
             <column name="email" value="odlyzko@att.net"/>
         </insert>
@@ -159,6 +176,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Dionne Weir"/>
             <column name="email" value="garyjb@gmail.com"/>
         </insert>
@@ -168,6 +186,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Luciano Schofield"/>
             <column name="email" value="houle@optonline.net"/>
         </insert>
@@ -177,6 +196,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Sophie-Louise Bauer"/>
             <column name="email" value="vganesh@gmail.com"/>
         </insert>
@@ -186,6 +206,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Genevieve Barnett"/>
             <column name="email" value="camenisch@yahoo.ca"/>
         </insert>
@@ -195,6 +216,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Jolie Cowan"/>
             <column name="email" value="rafasgj@optonline.net"/>
         </insert>
@@ -204,6 +226,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Hayden Thomson"/>
             <column name="email" value="msloan@optonline.net"/>
         </insert>
@@ -213,6 +236,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Luella Sutherland"/>
             <column name="email" value="lbecchi@yahoo.com"/>
         </insert>
@@ -222,6 +246,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Konrad Fletcher"/>
             <column name="email" value="dwsauder@optonline.net"/>
         </insert>
@@ -231,6 +256,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Daria Washington"/>
             <column name="email" value="jonas@optonline.net"/>
         </insert>
@@ -240,6 +266,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Mallory Buckley"/>
             <column name="email" value="sassen@verizon.net"/>
         </insert>
@@ -249,6 +276,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Beverley Mcintyre"/>
             <column name="email" value="arebenti@me.com"/>
         </insert>
@@ -258,6 +286,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Edison Ferreira"/>
             <column name="email" value="kalpol@optonline.net"/>
         </insert>
@@ -267,6 +296,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Jayce Partridge"/>
             <column name="email" value="starstuff@outlook.com"/>
         </insert>
@@ -276,6 +306,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Richard Stanton"/>
             <column name="email" value="makarow@sbcglobal.net"/>
         </insert>
@@ -285,6 +316,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Sonia Ingram"/>
             <column name="email" value="chaki@comcast.net"/>
         </insert>
@@ -294,6 +326,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Leela Justice"/>
             <column name="email" value="kodeman@optonline.net"/>
         </insert>
@@ -303,6 +336,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Danni Armstrong"/>
             <column name="email" value="rattenbt@yahoo.ca"/>
         </insert>
@@ -312,6 +346,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Usamah Rollins"/>
             <column name="email" value="ngedmond@optonline.net"/>
         </insert>
@@ -321,6 +356,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Ishaaq Mcmahon"/>
             <column name="email" value="elflord@aol.com"/>
         </insert>
@@ -330,6 +366,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Abdullahi Feeney"/>
             <column name="email" value="frostman@yahoo.ca"/>
         </insert>
@@ -339,6 +376,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Devan Mcdowell"/>
             <column name="email" value="wildixon@msn.com"/>
         </insert>
@@ -348,6 +386,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Jeevan Casey"/>
             <column name="email" value="tubajon@gmail.com"/>
         </insert>
@@ -357,6 +396,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Emme Howard"/>
             <column name="email" value="kawasaki@aol.com"/>
         </insert>
@@ -366,6 +406,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Loui Knowles"/>
             <column name="email" value="jfreedma@icloud.com"/>
         </insert>
@@ -375,6 +416,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Emmie Mejia"/>
             <column name="email" value="mhassel@verizon.net"/>
         </insert>
@@ -384,6 +426,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Austin Gough"/>
             <column name="email" value="bartlett@optonline.net"/>
         </insert>
@@ -393,6 +436,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Florrie Madden"/>
             <column name="email" value="balchen@outlook.com"/>
         </insert>
@@ -402,6 +446,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Deen Maguire"/>
             <column name="email" value="jpflip@yahoo.com"/>
         </insert>
@@ -411,6 +456,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Eilidh Valdez"/>
             <column name="email" value="donev@verizon.net"/>
         </insert>
@@ -420,6 +466,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Shayla Hunt"/>
             <column name="email" value="kmiller@me.com"/>
         </insert>
@@ -429,6 +476,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Dawud Boyle"/>
             <column name="email" value="uncled@msn.com"/>
         </insert>
@@ -438,6 +486,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Kien Garza"/>
             <column name="email" value="bancboy@me.com"/>
         </insert>
@@ -447,6 +496,7 @@
             </delete>
         </rollback>
         <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
             <column name="name" value="Wasim Miller"/>
             <column name="email" value="world@mac.com"/>
         </insert>

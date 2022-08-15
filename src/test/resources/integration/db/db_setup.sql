@@ -1,3 +1,5 @@
+SET DATABASE SQL SYNTAX PGS TRUE;
+
 CREATE TABLE users
 (
     id    BIGINT      NOT NULL,
@@ -7,7 +9,7 @@ CREATE TABLE users
     CONSTRAINT users_pk PRIMARY KEY (id),
     CONSTRAINT email_uq UNIQUE (email)
 );
-CREATE SEQUENCE users_seq START WITH 1;
+CREATE SEQUENCE users_id_seq START WITH 1;
 
 CREATE TABLE partnership_programs
 (
@@ -18,7 +20,7 @@ CREATE TABLE partnership_programs
     CONSTRAINT partnership_programs_pk PRIMARY KEY (id),
     CONSTRAINT title_uq UNIQUE (title)
 );
-CREATE SEQUENCE partnership_programs_seq START WITH 1;
+CREATE SEQUENCE partnership_programs_id_seq START WITH 1;
 
 CREATE TABLE subscriptions
 (

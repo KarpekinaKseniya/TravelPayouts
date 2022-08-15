@@ -6,6 +6,7 @@
       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet author="kkarpekina" id="insert_partnership_programs">
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="WayAway"/>
             <column name="description"
                     value="Monetize your travel content with an innovative flight aggregator that features a one-of-a-kind cashback program"/>
@@ -16,6 +17,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Booking.com"/>
             <column name="description" value="Earn commissions on hotel bookings"/>
         </insert>
@@ -25,6 +27,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Viator"/>
             <column name="description" value="Sell experiences while earning a competitive commission"/>
         </insert>
@@ -34,6 +37,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="GetYourGuide"/>
             <column name="description"
                     value="Link your audience to over 68,000 tours and activities and earn on every booking"/>
@@ -44,6 +48,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="RentalCars"/>
             <column name="description" value="Earn commissions on car rentals worldwide"/>
         </insert>
@@ -53,6 +58,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="EconomyBookings"/>
             <column name="description" value="Start earning on car rentals worldwide"/>
         </insert>
@@ -62,6 +68,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Omio"/>
             <column name="description"
                     value="Earn with the Omio affiliate program and help your customers organize their European trips"/>
@@ -72,6 +79,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Tiqets"/>
             <column name="description" value="Earn on museum, show and attraction tickets all over the world"/>
         </insert>
@@ -81,6 +89,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Busbud"/>
             <column name="description"
                     value="Join the official Busbud affiliate program and earn money selling bus tickets all over the world"/>
@@ -91,6 +100,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Insubuy"/>
             <column name="description" value="Start earning on every insurance policy sold for your trip to the USA."/>
         </insert>
@@ -100,6 +110,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Go City"/>
             <column name="description" value="Earn money on multi-attraction passes for tourists"/>
         </insert>
@@ -109,6 +120,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="BikesBooking"/>
             <column name="description" value="Earn money on bicycle, motorcycle and scooter rental services"/>
         </insert>
@@ -118,6 +130,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="QEEQ"/>
             <column name="description"
                     value="Help your audience rent a car while travelling and earn on every booking"/>
@@ -128,6 +141,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Expedia"/>
             <column name="description"
                     value="Create a free account now to earn on hotels, car rentals, transfers, flight tickets, and other travel services"/>
@@ -138,6 +152,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Discover Cars"/>
             <column name="description" value="Earn on the best car rental deals worldwide"/>
         </insert>
@@ -147,6 +162,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Trip.com"/>
             <column name="description" value="Earn on hotels, flights and train tickets"/>
         </insert>
@@ -156,6 +172,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="KiwiTaxi"/>
             <column name="description" value="Earn with the most popular transfer service"/>
         </insert>
@@ -165,6 +182,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Localrent"/>
             <column name="description"
                     value="Get rewarded for every time your client rents a car in popular holiday destinations"/>
@@ -175,6 +193,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Youtravel.me"/>
             <column name="description" value="Start earning money by selling tours across the world"/>
         </insert>
@@ -184,6 +203,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Snaptravel"/>
             <column name="description"
                     value="Help your audience get the best hotel deals via messaging services and earn on each booking"/>
@@ -194,6 +214,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Kiwi.com"/>
             <column name="description" value="Earn money on flight, train and bus tickets"/>
         </insert>
@@ -203,6 +224,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="CheapOair"/>
             <column name="description" value="Earn on flight tickets, car rentals, hotels, and package tours"/>
         </insert>
@@ -212,6 +234,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Eatwith"/>
             <column name="description"
                     value="Make money on culinary lessons and masterclasses from top cooking experts"/>
@@ -222,6 +245,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="RailEurope"/>
             <column name="description" value="Earn on train tickets and rail passes in Europe"/>
         </insert>
@@ -231,6 +255,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Big Bus Tours"/>
             <column name="description" value="Make money on open-top sightseeing tours"/>
         </insert>
@@ -240,6 +265,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Cruise Critic"/>
             <column name="description" value="Start earning from your audience’s clicks on partner sites"/>
         </insert>
@@ -249,6 +275,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Klook"/>
             <column name="description"
                     value="Link your audience to thousands of activities and earn money on every booking"/>
@@ -259,6 +286,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="HolidayTaxis"/>
             <column name="description" value="Earn on airport transfers around the world"/>
         </insert>
@@ -268,6 +296,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Ticketmaster"/>
             <column name="description"
                     value="Start earning by selling tickets for concerts, sporting events, art performances, and other events in the USA and other countries around the world"/>
@@ -278,6 +307,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Hilton Honors"/>
             <column name="description" value="Start earning on sale of Hilton hotel bonus points"/>
         </insert>
@@ -287,6 +317,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Priority Pass"/>
             <column name="description"
                     value="Start earning money on access to airport lounges in 148 countries around the world"/>
@@ -297,6 +328,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="i'way"/>
             <column name="description" value="Start earning on transfers around the world"/>
         </insert>
@@ -306,6 +338,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Mapo Tapo"/>
             <column name="description"
                     value="Offer your audience an easy way to go rock climbing and earn money on every booking"/>
@@ -316,6 +349,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Getrentacar"/>
             <column name="description"
                     value="Offer your audience car rentals directly from vehicle owners and earn on every booking"/>
@@ -326,6 +360,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Rakuten Travel"/>
             <column name="description" value="Earn on entertainment in Asia with Rakuten Travel Experiences"/>
         </insert>
@@ -335,6 +370,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Loveholidays"/>
             <column name="description" value="Start earning on various travel services in the UK and other countries"/>
         </insert>
@@ -344,6 +380,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Trainline"/>
             <column name="description" value="Earn on train and bus tickets in Europe"/>
         </insert>
@@ -353,6 +390,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="EKTA"/>
             <column name="description"
                     value="Offer your audience lucrative insurance products and make money on every sale of EKTA insurance"/>
@@ -363,6 +401,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Drimsim"/>
             <column name="description"
                     value="Start earning on SIM cards for travelers with the Drimsim Affiliate Program"/>
@@ -373,6 +412,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Compensair"/>
             <column name="description" value="Start earning on compensation for flight delays or cancellations"/>
         </insert>
@@ -382,6 +422,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Intui.Travel"/>
             <column name="description" value="Earn money on transfers to airports around the world"/>
         </insert>
@@ -391,6 +432,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Hotellook"/>
             <column name="description" value="Start earning money selling hotel bookings all over the world"/>
         </insert>
@@ -400,6 +442,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Aviasales"/>
             <column name="description" value="Start earning on the sale of flight tickets"/>
         </insert>
@@ -409,6 +452,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="TicketNetwork"/>
             <column name="description"
                     value="Earn on sporting event, concert and theater tickets with the TicketNetwork"/>
@@ -419,6 +463,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="PaulCamper"/>
             <column name="description" value="Start earning money on the growing mobile home rental market"/>
         </insert>
@@ -428,6 +473,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Radical Storage"/>
             <column name="description"
                     value="Start earning money on luggage storage together with the largest storage network"/>
@@ -438,6 +484,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="SeaRadar"/>
             <column name="description" value="Help your audience organize a yacht trip and earn on every booking"/>
         </insert>
@@ -447,6 +494,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="OYO"/>
             <column name="description"
                     value="Link your audience to comfortable hotels in 80+ countries and earn money on every booking"/>
@@ -457,6 +505,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Agoda"/>
             <column name="description" value="Earn on hotel bookings worldwide with the Agoda affiliate program"/>
         </insert>
@@ -466,6 +515,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="GetTransfer"/>
             <column name="description" value="Start earning on airport transfers around the world"/>
         </insert>
@@ -475,6 +525,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="12Go"/>
             <column name="description"
                     value="Earn on train, bus, ferry and charter tickets in Southeast Asia and Oceania"/>
@@ -485,6 +536,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="AirHelp"/>
             <column name="description"
                     value="Earn on compensation for flight cancellations and delays around the world"/>
@@ -495,6 +547,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="VisitorsCoverage"/>
             <column name="description" value="Start earning by selling travel insurance policies"/>
         </insert>
@@ -504,6 +557,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Flixbus"/>
             <column name="description"
                     value="Offer 2,500 routes of bus trips to your audience and earn on every booking"/>
@@ -514,6 +568,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Tripadvisor"/>
             <column name="description"
                     value="Enhance your travel content and earn a steady revenue stream on hotel and entertainment traffic"/>
@@ -524,6 +579,7 @@
             </delete>
         </rollback>
         <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
             <column name="title" value="Hostelworld"/>
             <column name="description" value="Earn on booking hostels around the world"/>
         </insert>

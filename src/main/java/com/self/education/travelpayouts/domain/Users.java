@@ -1,11 +1,15 @@
 package com.self.education.travelpayouts.domain;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
 import java.io.Serializable;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,6 +27,8 @@ import lombok.ToString;
 public class Users implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = SEQUENCE, generator = "users_sequence_generator")
+    @SequenceGenerator(name = "users_sequence_generator", sequenceName = "users_id_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "email", nullable = false)
