@@ -60,6 +60,10 @@
             <column name="program_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
+            <column name="subscribe_status" type="varchar(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueComputed="CURRENT_TIMESTAMP" name="created_time" type="TIMESTAMP"/>
         </createTable>
         <rollback>
             <dropTable tableName="subscriptions"/>

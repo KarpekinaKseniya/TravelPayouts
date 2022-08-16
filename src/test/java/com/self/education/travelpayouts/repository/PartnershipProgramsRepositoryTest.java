@@ -1,12 +1,15 @@
 package com.self.education.travelpayouts.repository;
 
+import static java.lang.Boolean.TRUE;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.RENTAL_CARS_TITLE;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.goCityEntity;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.omioEntity;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.rentalCarsEntity;
 
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration;
@@ -33,5 +36,14 @@ class PartnershipProgramsRepositoryTest {
         assertThat(actual.get(0), is(rentalCarsEntity().build()));
         assertThat(actual.get(1), is(omioEntity().build()));
         assertThat(actual.get(2), is(goCityEntity().build()));
+    }
+
+    @Test
+    @Sql({ "classpath:integration/db/db_cleanup.sql", "/integration/db/db_data.sql" })
+    void shouldFindPartnershipProgramByTitle() {
+        final Optional<PartnershipPrograms> actual = repository.findByTitle(RENTAL_CARS_TITLE);
+
+        assertThat(actual.isPresent(), is(TRUE));
+        assertThat(actual.get(), is(rentalCarsEntity().build()));
     }
 }

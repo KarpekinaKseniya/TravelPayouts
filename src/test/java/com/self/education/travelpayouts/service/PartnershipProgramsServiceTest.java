@@ -1,6 +1,7 @@
 package com.self.education.travelpayouts.service;
 
 import static java.util.Collections.singletonList;
+import static java.util.Optional.empty;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -10,16 +11,19 @@ import static org.mockito.Mockito.only;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.MockitoAnnotations.openMocks;
+import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.RENTAL_CARS_TITLE;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.rentalCarsEntity;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.rentalCarsResponse;
 
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import com.self.education.travelpayouts.api.ProgramResponse;
 import com.self.education.travelpayouts.domain.PartnershipPrograms;
+import com.self.education.travelpayouts.exception.EntityNotFoundException;
 import com.self.education.travelpayouts.mapper.PartnershipProgramsMapper;
 import com.self.education.travelpayouts.repository.PartnershipProgramsRepository;
 
@@ -85,6 +89,26 @@ class PartnershipProgramsServiceTest {
         assertThat(actual, is(exception));
 
         then(programsRepository).should(only()).findAll();
+    }
 
+    @Test
+    void shouldFindProgramByTitleSuccess() {
+        given(programsRepository.findByTitle(RENTAL_CARS_TITLE)).willReturn(Optional.of(rentalCarsEntity().build()));
+
+        final PartnershipPrograms actual = service.findPartnershipProgramByTitle(RENTAL_CARS_TITLE);
+        assertThat(actual, is(rentalCarsEntity().build()));
+
+        then(programsRepository).should(only()).findByTitle(RENTAL_CARS_TITLE);
+    }
+
+    @Test
+    void shouldThrowExceptionWhenProgramNotFound() {
+        given(programsRepository.findByTitle(RENTAL_CARS_TITLE)).willReturn(empty());
+
+        final EntityNotFoundException actual = assertThrows(EntityNotFoundException.class,
+                () -> service.findPartnershipProgramByTitle(RENTAL_CARS_TITLE));
+        assertThat(actual.getMessage(), is("Can't find Partnership Program by RentalCars"));
+
+        then(programsRepository).should(only()).findByTitle(RENTAL_CARS_TITLE);
     }
 }

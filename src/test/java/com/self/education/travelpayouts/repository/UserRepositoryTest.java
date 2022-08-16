@@ -2,10 +2,13 @@ package com.self.education.travelpayouts.repository;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.NABEELA_EMAIL;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaBuilder;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.yisroelEntity;
 
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration;
@@ -42,5 +45,15 @@ class UserRepositoryTest {
         final Users actual = repository.save(nabeelaBuilder().email(email).id(null).build());
 
         assertThat(actual, is(nabeelaBuilder().id(3L).email(email).build()));
+    }
+
+    @Test
+    @Sql({ "classpath:integration/db/db_cleanup.sql", "/integration/db/db_data.sql" })
+    void shouldFindUserByEmail() {
+
+        final Optional<Users> actual = repository.findByEmail(NABEELA_EMAIL);
+
+        assertTrue(actual.isPresent());
+        assertThat(actual.get(), is(nabeelaBuilder().build()));
     }
 }

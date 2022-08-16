@@ -1,9 +1,13 @@
 package com.self.education.travelpayouts.helper;
 
+import static com.self.education.travelpayouts.domain.SubscribeStatus.BLOCK;
+
 import com.self.education.travelpayouts.api.ProgramResponse;
 import com.self.education.travelpayouts.api.UserRequest;
 import com.self.education.travelpayouts.api.UserResponse;
 import com.self.education.travelpayouts.domain.PartnershipPrograms;
+import com.self.education.travelpayouts.domain.Subscriptions;
+import com.self.education.travelpayouts.domain.SubscriptionsId;
 import com.self.education.travelpayouts.domain.Users;
 
 public class TravelPayoutsHelper {
@@ -13,17 +17,17 @@ public class TravelPayoutsHelper {
     private static final Long GO_CITY_ID = 3L;
     private static final Long NABEELA_ID = 2L;
     private static final Long YISROEL_ID = 1L;
-    private static final String RENTAL_CARS_TITLE = "RentalCars";
-    private static final String OMIO_TITLE = "Omio";
     private static final String GO_CITY_TITLE = "Go City";
     private static final String RENTAL_CARS_DESCRIPTION = "Earn commissions on car rentals worldwide";
     private static final String OMIO_DESCRIPTION =
             "Earn with the Omio affiliate program and help your customers organize their European trips";
     private static final String GO_CITY_DESCRIPTION = "Earn money on multi-attraction passes for tourists";
-    private static final String NABEELA_EMAIL = "juliano@msn.com";
-    private static final String YISROEL_EMAIL = "loscar@yahoo.ca";
     private static final String NABEELA_NAME = "Nabeela Leech";
     private static final String YISROEL_NAME = "Yisroel Mcarthur";
+    public static final String RENTAL_CARS_TITLE = "RentalCars";
+    public static final String NABEELA_EMAIL = "juliano@msn.com";
+    public static final String OMIO_TITLE = "Omio";
+    public static final String YISROEL_EMAIL = "loscar@yahoo.ca";
 
     public static PartnershipPrograms.PartnershipProgramsBuilder rentalCarsEntity() {
         //@formatter:off
@@ -58,6 +62,12 @@ public class TravelPayoutsHelper {
                 .title(RENTAL_CARS_TITLE)
                 .description(RENTAL_CARS_DESCRIPTION);
         //@formatter:on
+    }
+
+    public static Subscriptions.SubscriptionsBuilder subscriptionsEntityBuilder() {
+        return Subscriptions.builder().primaryKey(
+                        SubscriptionsId.builder().user(nabeelaBuilder().build()).program(rentalCarsEntity().build()).build())
+                .subscribeStatus(BLOCK);
     }
 
     public static Users yisroelEntity() {

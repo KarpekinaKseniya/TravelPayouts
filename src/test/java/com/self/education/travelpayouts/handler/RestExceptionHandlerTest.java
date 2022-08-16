@@ -4,6 +4,7 @@ import static java.util.Collections.singletonList;
 import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
 import static javax.servlet.http.HttpServletResponse.SC_CONFLICT;
 import static javax.servlet.http.HttpServletResponse.SC_INTERNAL_SERVER_ERROR;
+import static javax.servlet.http.HttpServletResponse.SC_NOT_FOUND;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.BDDMockito.given;
@@ -24,6 +25,8 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.context.request.WebRequest;
 import com.self.education.travelpayouts.api.ErrorResponse;
+import com.self.education.travelpayouts.exception.ChangeSubscriptionStatusException;
+import com.self.education.travelpayouts.exception.EntityNotFoundException;
 
 class RestExceptionHandlerTest {
 
@@ -101,5 +104,21 @@ class RestExceptionHandlerTest {
 
         final ErrorResponse actual = handler.handleDataIntegrityViolation(exception, webRequest);
         assertThat(actual, is(errorResponse.statusCode(SC_CONFLICT).build()));
+    }
+
+    @Test
+    void shouldHandleChangeSubscriptionStatusException() {
+        final ChangeSubscriptionStatusException exception = new ChangeSubscriptionStatusException(ERROR_MESSAGE);
+
+        final ErrorResponse actual = handler.handleChangeSubscriptionStatusException(exception, webRequest);
+        assertThat(actual, is(errorResponse.statusCode(SC_BAD_REQUEST).build()));
+    }
+
+    @Test
+    void shouldHandleEntityNotFoundException() {
+        final EntityNotFoundException exception = new EntityNotFoundException(ERROR_MESSAGE);
+
+        final ErrorResponse actual = handler.handleEntityNotFoundException(exception, webRequest);
+        assertThat(actual, is(errorResponse.statusCode(SC_NOT_FOUND).build()));
     }
 }

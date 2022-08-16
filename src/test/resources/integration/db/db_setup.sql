@@ -26,6 +26,8 @@ CREATE TABLE subscriptions
 (
     user_id    BIGINT NOT NULL,
     program_id BIGINT NOT NULL,
+    subscribe_status VARCHAR(15) NOT NULL,
+    created_time timestamp DEFAULT '2000-01-01 10:00:00',
 
     CONSTRAINT subscriptions_pk PRIMARY KEY (user_id, program_id)
 );

@@ -1,5 +1,6 @@
 package com.self.education.travelpayouts.service;
 
+import static java.util.Optional.empty;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -9,6 +10,7 @@ import static org.mockito.Mockito.only;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.MockitoAnnotations.openMocks;
+import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.NABEELA_EMAIL;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaBuilder;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaRequest;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaResponse;
@@ -16,12 +18,14 @@ import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.yisroe
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.yisroelResponse;
 
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import com.self.education.travelpayouts.api.UserResponse;
 import com.self.education.travelpayouts.domain.Users;
+import com.self.education.travelpayouts.exception.EntityNotFoundException;
 import com.self.education.travelpayouts.mapper.UserMapper;
 import com.self.education.travelpayouts.repository.UserRepository;
 
@@ -103,5 +107,26 @@ class UserServiceTest {
         assertThat(actual, is(exception));
 
         then(userRepository).should(only()).findAll();
+    }
+
+    @Test
+    void shouldFindUserByEmailSuccess() {
+        given(userRepository.findByEmail(NABEELA_EMAIL)).willReturn(Optional.of(nabeelaBuilder().build()));
+
+        final Users actual = service.findUserByEmail(NABEELA_EMAIL);
+        assertThat(actual, is(nabeelaBuilder().build()));
+
+        then(userRepository).should(only()).findByEmail(NABEELA_EMAIL);
+    }
+
+    @Test
+    void shouldThrowExceptionWhenUserNotFound() {
+        given(userRepository.findByEmail(NABEELA_EMAIL)).willReturn(empty());
+
+        final EntityNotFoundException actual =
+                assertThrows(EntityNotFoundException.class, () -> service.findUserByEmail(NABEELA_EMAIL));
+        assertThat(actual.getMessage(), is("Can't find User by juliano@msn.com"));
+
+        then(userRepository).should(only()).findByEmail(NABEELA_EMAIL);
     }
 }
