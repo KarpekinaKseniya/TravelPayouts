@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.NABEELA_EMAIL;
+import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.YISROEL_ID;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.nabeelaBuilder;
 import static com.self.education.travelpayouts.helper.TravelPayoutsHelper.yisroelEntity;
 
@@ -55,5 +56,28 @@ class UserRepositoryTest {
 
         assertTrue(actual.isPresent());
         assertThat(actual.get(), is(nabeelaBuilder().build()));
+    }
+
+    @Test
+    @Sql({ "classpath:integration/db/db_cleanup.sql" })
+    void shouldReturnEmptyOptionalWhenNotFoundByEmail() {
+        final Optional<Users> actual = repository.findByEmail(NABEELA_EMAIL);
+        assertTrue(actual.isEmpty());
+    }
+
+    @Test
+    @Sql({ "classpath:integration/db/db_cleanup.sql", "/integration/db/db_data.sql" })
+    void shouldFindUserById() {
+        final Optional<Users> actual = repository.findUsersById(YISROEL_ID);
+
+        assertTrue(actual.isPresent());
+        assertThat(actual.get(), is(yisroelEntity()));
+    }
+
+    @Test
+    @Sql({ "classpath:integration/db/db_cleanup.sql" })
+    void shouldReturnEmptyOptionalWhenNotFoundById() {
+        final Optional<Users> actual = repository.findUsersById(YISROEL_ID);
+        assertTrue(actual.isEmpty());
     }
 }

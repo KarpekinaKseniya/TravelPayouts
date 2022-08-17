@@ -15,8 +15,6 @@ public class TravelPayoutsHelper {
     private static final Long RENTAL_CARS_ID = 1L;
     private static final Long OMIO_ID = 2L;
     private static final Long GO_CITY_ID = 3L;
-    private static final Long NABEELA_ID = 2L;
-    private static final Long YISROEL_ID = 1L;
     private static final String GO_CITY_TITLE = "Go City";
     private static final String RENTAL_CARS_DESCRIPTION = "Earn commissions on car rentals worldwide";
     private static final String OMIO_DESCRIPTION =
@@ -28,6 +26,8 @@ public class TravelPayoutsHelper {
     public static final String NABEELA_EMAIL = "juliano@msn.com";
     public static final String OMIO_TITLE = "Omio";
     public static final String YISROEL_EMAIL = "loscar@yahoo.ca";
+    public static final Long YISROEL_ID = 1L;
+    public static final Long NABEELA_ID = 2L;
 
     public static PartnershipPrograms.PartnershipProgramsBuilder rentalCarsEntity() {
         //@formatter:off
