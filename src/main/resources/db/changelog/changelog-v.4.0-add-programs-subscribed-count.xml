@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="kkarpekina" id="create-function-for-counting-subscribed">
+        <createProcedure>
+            CREATE
+            OR REPLACE FUNCTION total_subscribed() RETURNS TRIGGER
+            LANGUAGE plpgsql
+            AS $$
+            BEGIN
+            UPDATE partnership_programs
+            SET subscriber_count = (SELECT COUNT(*)
+                                    FROM subscriptions
+                                    WHERE partnership_programs.id = subscriptions.program_id
+                                      AND subscribe_status = 'SUBSCRIBED');
+            RETURN NEW;
+            END;$$;
+        </createProcedure>
+        <rollback>
+            DROP FUNCTION total_subscribed();
+        </rollback>
+    </changeSet>
+    <changeSet author="kkarpekina" id="create-trigger-for-counting-subscribed">
+        <sql>
+            DROP TRIGGER IF EXISTS total_programs_subscribed ON subscriptions;
+            CREATE TRIGGER total_programs_subscribed
+                AFTER INSERT OR
+            UPDATE OR
+            DELETE
+            ON subscriptions
+            FOR EACH ROW EXECUTE PROCEDURE total_subscribed();
+        </sql>
+        <rollback>
+            DROP TRIGGER total_programs_subscribed ON subscriptions;
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

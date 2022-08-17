@@ -9,4 +9,6 @@ public interface PartnershipProgramsService {
     List<ProgramResponse> getAllPrograms();
 
     PartnershipPrograms findPartnershipProgramByTitle(String title);
+
+    List<ProgramResponse> findProgramsByTermOrderByPopularityDesc(String title);
 }

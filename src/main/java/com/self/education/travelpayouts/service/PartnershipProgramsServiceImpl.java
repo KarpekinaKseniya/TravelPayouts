@@ -26,4 +26,10 @@ public class PartnershipProgramsServiceImpl implements PartnershipProgramsServic
         return programsRepository.findByTitle(title)
                 .orElseThrow(() -> new EntityNotFoundException("Partnership Program", title));
     }
+
+    @Override
+    public List<ProgramResponse> findProgramsByTermOrderByPopularityDesc(final String title) {
+        return programsRepository.findByTitleContainingIgnoreCaseOrderBySubscriberCountDesc(title).stream()
+                .map(programsMapper::transform).toList();
+    }
 }

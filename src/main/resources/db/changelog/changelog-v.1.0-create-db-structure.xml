@@ -38,6 +38,7 @@
                 <constraints nullable="false" unique="true" uniqueConstraintName="partnership_programs_title_seq"/>
             </column>
             <column name="description" type="varchar(200)"/>
+            <column name="subscriber_count" type="int"/>
         </createTable>
         <rollback>
             <dropTable tableName="partnership_programs"/>

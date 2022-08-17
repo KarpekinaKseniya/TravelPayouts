@@ -37,6 +37,9 @@ public class PartnershipPrograms implements Serializable {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "subscriber_count")
+    private Integer subscriberCount;
+
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "primaryKey.program")

@@ -7,6 +7,7 @@
     <include file="changelog-v.1.0-create-db-structure.xml" relativeToChangelogFile="true"/>
     <include file="changelog-v.2.0-add-users-in-table.xml" relativeToChangelogFile="true"/>
     <include file="changelog-v.3.0-add-partnership-programs.xml" relativeToChangelogFile="true"/>
-    <include file="changelog-v.4.0-add-data-at-subscriptions-table.xml" relativeToChangelogFile="true"/>
-    <include file="changelog-v.5.0-add-removing-old-unsubscribed-records.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-v.4.0-add-programs-subscribed-count.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-v.5.0-add-data-at-subscriptions-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-v.6.0-add-removing-old-unsubscribed-records.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

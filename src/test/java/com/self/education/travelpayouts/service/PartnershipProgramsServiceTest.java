@@ -111,4 +111,18 @@ class PartnershipProgramsServiceTest {
 
         then(programsRepository).should(only()).findByTitle(RENTAL_CARS_TITLE);
     }
+
+    @Test
+    void shouldFindProgramByTitleContaining() {
+        given(programsRepository.findByTitleContainingIgnoreCaseOrderBySubscriberCountDesc(
+                RENTAL_CARS_TITLE)).willReturn(singletonList(rentalCarsEntity().build()));
+        given(programsMapper.transform(rentalCarsEntity().build())).willReturn(rentalCarsResponse().build());
+
+        final List<ProgramResponse> actual = service.findProgramsByTermOrderByPopularityDesc(RENTAL_CARS_TITLE);
+        assertThat(actual, is(singletonList(rentalCarsResponse().build())));
+
+        then(programsRepository).should(only())
+                .findByTitleContainingIgnoreCaseOrderBySubscriberCountDesc(RENTAL_CARS_TITLE);
+        then(programsMapper).should(only()).transform(rentalCarsEntity().build());
+    }
 }

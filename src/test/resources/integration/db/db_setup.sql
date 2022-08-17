@@ -16,6 +16,7 @@ CREATE TABLE partnership_programs
     id          BIGINT      NOT NULL,
     title       VARCHAR(50) NOT NULL,
     description VARCHAR(200),
+    subscriber_count INT,
 
     CONSTRAINT partnership_programs_pk PRIMARY KEY (id),
     CONSTRAINT title_uq UNIQUE (title)
