@@ -1,0 +1,5 @@
+{
+  "statusCode": 404,
+  "message": "Can't find Partnership Program by wrong title",
+  "description": "uri=/travel-payouts/v1/subscription-status/"
+}

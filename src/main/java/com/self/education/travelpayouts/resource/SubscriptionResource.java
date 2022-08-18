@@ -19,7 +19,7 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/travel-payouts/v1/subscribe-status")
+@RequestMapping("/travel-payouts/v1/subscription-status")
 public class SubscriptionResource {
 
     private final SubscriptionService subscriptionService;

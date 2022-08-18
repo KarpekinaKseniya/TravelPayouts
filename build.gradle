@@ -18,6 +18,7 @@ ext {
     liquibaseVersion = "4.14.0"
     lombokVersion = "1.18.24"
     mapstructVersion = "1.5.2.Final"
+    hamcrestVersion = "0.2"
 }
 
 dependencies {
@@ -37,6 +38,8 @@ dependencies {
     testRuntimeOnly "org.hsqldb:hsqldb"
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testImplementation "io.rest-assured:rest-assured"
+    testImplementation "uk.co.datumedge:hamcrest-json:${hamcrestVersion}"
 }
 
 test {

@@ -1,0 +1,5 @@
+{
+  "statusCode": 500,
+  "message": "could not prepare statement; SQL [select users0_.id as id1_2_, users0_.email as email2_2_, users0_.name as name3_2_ from users users0_]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement",
+  "description": "uri=/travel-payouts/v1/users"
+}

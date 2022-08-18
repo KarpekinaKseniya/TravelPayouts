@@ -1,0 +1,5 @@
+{
+  "statusCode": 404,
+  "message": "Can't find User by wrong.email",
+  "description": "uri=/travel-payouts/v1/subscription-status/block"
+}

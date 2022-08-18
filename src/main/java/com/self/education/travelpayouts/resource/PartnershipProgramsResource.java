@@ -19,7 +19,7 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/travel-payouts/v1")
+@RequestMapping("/travel-payouts/v1/partnership-programs")
 public class PartnershipProgramsResource {
 
     private final PartnershipProgramsService programsService;
@@ -31,7 +31,7 @@ public class PartnershipProgramsResource {
             @ApiResponse(responseCode = "400", description = "Bad Request", content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = ErrorResponse.class))) })
     //@formatter:on
-    @GetMapping("/partnership-programs")
+    @GetMapping
     public ResponseEntity<List<ProgramResponse>> findAllPrograms() {
         return ok(programsService.getAllPrograms());
     }
@@ -44,7 +44,7 @@ public class PartnershipProgramsResource {
                 @ApiResponse(responseCode = "400", description = "Bad Request", content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
                 @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = ErrorResponse.class))) })
     //@formatter:on
-    @GetMapping("/partnership-programs/{title}")
+    @GetMapping("/{title}")
     public ResponseEntity<List<ProgramResponse>> findProgramsByTitle(@PathVariable final String title) {
         return ok(programsService.findProgramsByTermOrderByPopularityDesc(title));
     }
