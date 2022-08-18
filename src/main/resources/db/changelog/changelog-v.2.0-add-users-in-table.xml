@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="kkarpekina" id="insert_users">
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Mert Webb"/>
+            <column name="email" value="arandal@gmail.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Mert Webb'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Yisroel Mcarthur"/>
+            <column name="email" value="juliano@msn.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Yisroel Mcarthur'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Nabeela Leech"/>
+            <column name="email" value="loscar@yahoo.ca"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Nabeela Leech'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Farhana Paterson"/>
+            <column name="email" value="druschel@comcast.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Farhana Paterson'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Benedict Drew"/>
+            <column name="email" value="violinhi@icloud.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Benedict Drew'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Tahir Frye"/>
+            <column name="email" value="djupedal@yahoo.ca"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Tahir Frye'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Danyaal Hackett"/>
+            <column name="email" value="manuals@sbcglobal.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Danyaal Hackett'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Anton Hail"/>
+            <column name="email" value="debest@hotmail.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Anton Hail'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Milo Kenny"/>
+            <column name="email" value="ghost@yahoo.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Milo Kenny'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Katelyn Murillo"/>
+            <column name="email" value="dmbkiwi@sbcglobal.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Katelyn Murillo'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Austen Vo"/>
+            <column name="email" value="bastian@gmail.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Austen Vo'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Nela Morgan"/>
+            <column name="email" value="weazelman@hotmail.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Nela Morgan'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Sabiha Spears"/>
+            <column name="email" value="ismail@sbcglobal.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Sabiha Spears'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Ezekiel Hoover"/>
+            <column name="email" value="jonathan@live.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Ezekiel Hoover'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Doris Wardle"/>
+            <column name="email" value="agolomsh@sbcglobal.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Doris Wardle'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Havin Alexander"/>
+            <column name="email" value="iamcal@me.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Havin Alexander'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Murtaza Cordova"/>
+            <column name="email" value="odlyzko@att.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Murtaza Cordova'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Dionne Weir"/>
+            <column name="email" value="garyjb@gmail.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Dionne Weir'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Luciano Schofield"/>
+            <column name="email" value="houle@optonline.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Luciano Schofield'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Sophie-Louise Bauer"/>
+            <column name="email" value="vganesh@gmail.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Sophie-Louise Bauer'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Genevieve Barnett"/>
+            <column name="email" value="camenisch@yahoo.ca"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Genevieve Barnett'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Jolie Cowan"/>
+            <column name="email" value="rafasgj@optonline.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Jolie Cowan'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Hayden Thomson"/>
+            <column name="email" value="msloan@optonline.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Hayden Thomson'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Luella Sutherland"/>
+            <column name="email" value="lbecchi@yahoo.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Luella Sutherland'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Konrad Fletcher"/>
+            <column name="email" value="dwsauder@optonline.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Konrad Fletcher'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Daria Washington"/>
+            <column name="email" value="jonas@optonline.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Daria Washington'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Mallory Buckley"/>
+            <column name="email" value="sassen@verizon.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Mallory Buckley'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Beverley Mcintyre"/>
+            <column name="email" value="arebenti@me.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Beverley Mcintyre'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Edison Ferreira"/>
+            <column name="email" value="kalpol@optonline.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Edison Ferreira'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Jayce Partridge"/>
+            <column name="email" value="starstuff@outlook.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Jayce Partridge'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Richard Stanton"/>
+            <column name="email" value="makarow@sbcglobal.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Richard Stanton'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Sonia Ingram"/>
+            <column name="email" value="chaki@comcast.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Sonia Ingram'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Leela Justice"/>
+            <column name="email" value="kodeman@optonline.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Leela Justice'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Danni Armstrong"/>
+            <column name="email" value="rattenbt@yahoo.ca"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Danni Armstrong'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Usamah Rollins"/>
+            <column name="email" value="ngedmond@optonline.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Usamah Rollins'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Ishaaq Mcmahon"/>
+            <column name="email" value="elflord@aol.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Ishaaq Mcmahon'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Abdullahi Feeney"/>
+            <column name="email" value="frostman@yahoo.ca"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Abdullahi Feeney'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Devan Mcdowell"/>
+            <column name="email" value="wildixon@msn.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Devan Mcdowell'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Jeevan Casey"/>
+            <column name="email" value="tubajon@gmail.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Jeevan Casey'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Emme Howard"/>
+            <column name="email" value="kawasaki@aol.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Emme Howard'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Loui Knowles"/>
+            <column name="email" value="jfreedma@icloud.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Loui Knowles'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Emmie Mejia"/>
+            <column name="email" value="mhassel@verizon.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Emmie Mejia'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Austin Gough"/>
+            <column name="email" value="bartlett@optonline.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Austin Gough</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Florrie Madden"/>
+            <column name="email" value="balchen@outlook.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Florrie Madden'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Deen Maguire"/>
+            <column name="email" value="jpflip@yahoo.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Deen Maguire'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Eilidh Valdez"/>
+            <column name="email" value="donev@verizon.net"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Eilidh Valdez'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Shayla Hunt"/>
+            <column name="email" value="kmiller@me.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Shayla Hunt'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Dawud Boyle"/>
+            <column name="email" value="uncled@msn.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Dawud Boyle'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Kien Garza"/>
+            <column name="email" value="bancboy@me.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Kien Garza'</where>
+            </delete>
+        </rollback>
+        <insert tableName="users">
+            <column name="id" valueComputed="nextval('users_id_seq')"/>
+            <column name="name" value="Wasim Miller"/>
+            <column name="email" value="world@mac.com"/>
+        </insert>
+        <rollback>
+            <delete tableName="users">
+                <where>name='Wasim Miller'</where>
+            </delete>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

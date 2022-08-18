@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="kkarpekina" id="insert_partnership_programs">
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="WayAway"/>
+            <column name="description"
+                    value="Monetize your travel content with an innovative flight aggregator that features a one-of-a-kind cashback program"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='WayAway'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Booking.com"/>
+            <column name="description" value="Earn commissions on hotel bookings"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Booking.com'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Viator"/>
+            <column name="description" value="Sell experiences while earning a competitive commission"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Viator'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="GetYourGuide"/>
+            <column name="description"
+                    value="Link your audience to over 68,000 tours and activities and earn on every booking"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='GetYourGuide'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="RentalCars"/>
+            <column name="description" value="Earn commissions on car rentals worldwide"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='RentalCars'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="EconomyBookings"/>
+            <column name="description" value="Start earning on car rentals worldwide"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='EconomyBookings'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Omio"/>
+            <column name="description"
+                    value="Earn with the Omio affiliate program and help your customers organize their European trips"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Omio'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Tiqets"/>
+            <column name="description" value="Earn on museum, show and attraction tickets all over the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Tiqets'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Busbud"/>
+            <column name="description"
+                    value="Join the official Busbud affiliate program and earn money selling bus tickets all over the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Busbud'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Insubuy"/>
+            <column name="description" value="Start earning on every insurance policy sold for your trip to the USA."/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Insubuy'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Go City"/>
+            <column name="description" value="Earn money on multi-attraction passes for tourists"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Go City'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="BikesBooking"/>
+            <column name="description" value="Earn money on bicycle, motorcycle and scooter rental services"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='BikesBooking'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="QEEQ"/>
+            <column name="description"
+                    value="Help your audience rent a car while travelling and earn on every booking"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='QEEQ'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Expedia"/>
+            <column name="description"
+                    value="Create a free account now to earn on hotels, car rentals, transfers, flight tickets, and other travel services"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Expedia'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Discover Cars"/>
+            <column name="description" value="Earn on the best car rental deals worldwide"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Discover Cars'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Trip.com"/>
+            <column name="description" value="Earn on hotels, flights and train tickets"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Trip.com'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="KiwiTaxi"/>
+            <column name="description" value="Earn with the most popular transfer service"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='KiwiTaxi'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Localrent"/>
+            <column name="description"
+                    value="Get rewarded for every time your client rents a car in popular holiday destinations"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Localrent'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Youtravel.me"/>
+            <column name="description" value="Start earning money by selling tours across the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Youtravel.me'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Snaptravel"/>
+            <column name="description"
+                    value="Help your audience get the best hotel deals via messaging services and earn on each booking"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Snaptravel'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Kiwi.com"/>
+            <column name="description" value="Earn money on flight, train and bus tickets"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Kiwi.com'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="CheapOair"/>
+            <column name="description" value="Earn on flight tickets, car rentals, hotels, and package tours"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='CheapOair'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Eatwith"/>
+            <column name="description"
+                    value="Make money on culinary lessons and masterclasses from top cooking experts"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Eatwith'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="RailEurope"/>
+            <column name="description" value="Earn on train tickets and rail passes in Europe"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='RailEurope'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Big Bus Tours"/>
+            <column name="description" value="Make money on open-top sightseeing tours"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Big Bus Tours'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Cruise Critic"/>
+            <column name="description" value="Start earning from your audience’s clicks on partner sites"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Cruise Critic'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Klook"/>
+            <column name="description"
+                    value="Link your audience to thousands of activities and earn money on every booking"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Klook'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="HolidayTaxis"/>
+            <column name="description" value="Earn on airport transfers around the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='HolidayTaxis'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Ticketmaster"/>
+            <column name="description"
+                    value="Start earning by selling tickets for concerts, sporting events, art performances, and other events in the USA and other countries around the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Ticketmaster'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Hilton Honors"/>
+            <column name="description" value="Start earning on sale of Hilton hotel bonus points"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Hilton Honors'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Priority Pass"/>
+            <column name="description"
+                    value="Start earning money on access to airport lounges in 148 countries around the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Priority Pass'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="i'way"/>
+            <column name="description" value="Start earning on transfers around the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='i'way'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Mapo Tapo"/>
+            <column name="description"
+                    value="Offer your audience an easy way to go rock climbing and earn money on every booking"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Mapo Tapo'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Getrentacar"/>
+            <column name="description"
+                    value="Offer your audience car rentals directly from vehicle owners and earn on every booking"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Getrentacar'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Rakuten Travel"/>
+            <column name="description" value="Earn on entertainment in Asia with Rakuten Travel Experiences"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Rakuten Travel'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Loveholidays"/>
+            <column name="description" value="Start earning on various travel services in the UK and other countries"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Loveholidays'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Trainline"/>
+            <column name="description" value="Earn on train and bus tickets in Europe"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Trainline'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="EKTA"/>
+            <column name="description"
+                    value="Offer your audience lucrative insurance products and make money on every sale of EKTA insurance"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='EKTA'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Drimsim"/>
+            <column name="description"
+                    value="Start earning on SIM cards for travelers with the Drimsim Affiliate Program"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Drimsim'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Compensair"/>
+            <column name="description" value="Start earning on compensation for flight delays or cancellations"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Compensair'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Intui.Travel"/>
+            <column name="description" value="Earn money on transfers to airports around the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Intui.Travel'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Hotellook"/>
+            <column name="description" value="Start earning money selling hotel bookings all over the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Hotellook'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Aviasales"/>
+            <column name="description" value="Start earning on the sale of flight tickets"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Aviasales'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="TicketNetwork"/>
+            <column name="description"
+                    value="Earn on sporting event, concert and theater tickets with the TicketNetwork"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='TicketNetwork'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="PaulCamper"/>
+            <column name="description" value="Start earning money on the growing mobile home rental market"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='PaulCamper'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Radical Storage"/>
+            <column name="description"
+                    value="Start earning money on luggage storage together with the largest storage network"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Radical Storage'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="SeaRadar"/>
+            <column name="description" value="Help your audience organize a yacht trip and earn on every booking"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='SeaRadar'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="OYO"/>
+            <column name="description"
+                    value="Link your audience to comfortable hotels in 80+ countries and earn money on every booking"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='OYO'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Agoda"/>
+            <column name="description" value="Earn on hotel bookings worldwide with the Agoda affiliate program"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Agoda'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="GetTransfer"/>
+            <column name="description" value="Start earning on airport transfers around the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='GetTransfer'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="12Go"/>
+            <column name="description"
+                    value="Earn on train, bus, ferry and charter tickets in Southeast Asia and Oceania"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='12Go'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="AirHelp"/>
+            <column name="description"
+                    value="Earn on compensation for flight cancellations and delays around the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='AirHelp'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="VisitorsCoverage"/>
+            <column name="description" value="Start earning by selling travel insurance policies"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='VisitorsCoverage'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Flixbus"/>
+            <column name="description"
+                    value="Offer 2,500 routes of bus trips to your audience and earn on every booking"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Flixbus'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Tripadvisor"/>
+            <column name="description"
+                    value="Enhance your travel content and earn a steady revenue stream on hotel and entertainment traffic"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Tripadvisor'</where>
+            </delete>
+        </rollback>
+        <insert tableName="partnership_programs">
+            <column name="id" valueComputed="nextval('partnership_programs_id_seq')"/>
+            <column name="title" value="Hostelworld"/>
+            <column name="description" value="Earn on booking hostels around the world"/>
+        </insert>
+        <rollback>
+            <delete tableName="partnership_programs">
+                <where>title='Hostelworld'</where>
+            </delete>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

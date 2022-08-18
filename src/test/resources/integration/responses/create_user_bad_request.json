@@ -1,0 +1,5 @@
+{
+  "statusCode": 400,
+  "message": "User email isn't valid, User name cannot be blank",
+  "description": "uri=/travel-payouts/v1/user"
+}

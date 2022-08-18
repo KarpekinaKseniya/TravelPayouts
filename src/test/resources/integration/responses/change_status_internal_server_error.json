@@ -1,0 +1,5 @@
+{
+  "statusCode": 500,
+  "message": "Failed to convert value of type 'java.lang.String' to required type 'com.self.education.travelpayouts.domain.SubscribeStatus'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam com.self.education.travelpayouts.domain.SubscribeStatus] for value 'UNKNOWN'; nested exception is java.lang.IllegalArgumentException: No enum constant com.self.education.travelpayouts.domain.SubscribeStatus.UNKNOWN",
+  "description": "uri=/travel-payouts/v1/subscription-status/"
+}

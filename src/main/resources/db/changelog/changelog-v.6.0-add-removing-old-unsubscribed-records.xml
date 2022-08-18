@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="kkarpekina" id="create-function-for-delete-old-records">
+        <createProcedure>
+            CREATE OR REPLACE FUNCTION delete_old_records() RETURNS trigger
+        LANGUAGE plpgsql
+        AS $$
+            BEGIN
+                <![CDATA[DELETE FROM subscriptions WHERE
+                                                       created_time < now() - interval '60 days' AND
+                                                       subscribe_status = 'UNSUBSCRIBED'; ]]>
+                RETURN NULL;
+            END;
+        $$;
+        </createProcedure>
+        <rollback>
+            DROP FUNCTION delete_old_records();
+        </rollback>
+    </changeSet>
+    <changeSet author="kkarpekina" id="create-trigger-for-delete-all-old-rows">
+        <sql>
+            DROP TRIGGER IF EXISTS delete_all_old_rows ON subscriptions;
+            CREATE TRIGGER delete_all_old_rows AFTER INSERT OR UPDATE ON subscriptions EXECUTE PROCEDURE delete_old_records();
+        </sql>
+        <rollback>
+            DROP TRIGGER delete_all_old_rows ON subscriptions;
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

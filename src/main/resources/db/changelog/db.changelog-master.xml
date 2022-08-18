@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <include file="changelog-v.1.0-create-db-structure.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-v.2.0-add-users-in-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-v.3.0-add-partnership-programs.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-v.4.0-add-programs-subscribed-count.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-v.5.0-add-data-at-subscriptions-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-v.6.0-add-removing-old-unsubscribed-records.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

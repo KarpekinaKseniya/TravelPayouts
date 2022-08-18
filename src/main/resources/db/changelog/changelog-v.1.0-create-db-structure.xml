@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="kkarpekina" id="create_users_table">
+        <createTable tableName="users">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" primaryKeyName="users_pk"/>
+            </column>
+            <column name="email" type="varchar(50)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="users_email_seq"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="users"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="kkarpekina" id="create_users_sequence">
+        <comment>Create users_id_seq sequence</comment>
+        <sql>
+            CREATE SEQUENCE users_id_seq OWNED BY users.id;
+        </sql>
+        <rollback>
+            DROP SEQUENCE users_id_seq;
+        </rollback>
+    </changeSet>
+    <changeSet author="kkarpekina" id="create_partnership_programs_table">
+        <createTable tableName="partnership_programs">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" primaryKeyName="partnership_programs_pk"/>
+            </column>
+            <column name="title" type="varchar(50)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="partnership_programs_title_seq"/>
+            </column>
+            <column name="description" type="varchar(200)"/>
+            <column name="subscriber_count" type="int"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="partnership_programs"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="kkarpekina" id="create_partnership_programs_sequence">
+        <comment>Create partnership_programs_id_seq sequence</comment>
+        <sql>
+            CREATE SEQUENCE partnership_programs_id_seq OWNED BY partnership_programs.id;
+        </sql>
+        <rollback>
+            DROP SEQUENCE partnership_programs_id_seq;
+        </rollback>
+    </changeSet>
+    <changeSet author="kkarpekina" id="create_subscriptions_table">
+        <createTable tableName="subscriptions">
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="program_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="subscribe_status" type="varchar(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueComputed="CURRENT_TIMESTAMP" name="created_time" type="TIMESTAMP"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="subscriptions"/>
+        </rollback>
+        <addPrimaryKey tableName="subscriptions" columnNames="user_id,program_id" constraintName="subscriptions_pk"/>
+        <rollback>
+            <dropPrimaryKey tableName="subscriptions" constraintName="subscriptions_pk"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="kkarpekina" id="create_foreign_keys">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="subscriptions"
+                                 constraintName="fk_users_subscriptions"
+                                 deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"
+                                 referencedColumnNames="id" referencedTableName="users" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="program_id" baseTableName="subscriptions"
+                                 constraintName="fk_programs_subscriptions"
+                                 deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"
+                                 referencedColumnNames="id" referencedTableName="partnership_programs" validate="true"/>
+        <rollback>
+            <dropForeignKeyConstraint baseTableName="subscriptions" constraintName="fk_users_subscriptions"/>
+            <dropForeignKeyConstraint baseTableName="subscriptions" constraintName="fk_programs_subscriptions"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
