@@ -34,6 +34,8 @@ dependencies {
     implementation "org.mapstruct:mapstruct:${mapstructVersion}"
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 
+    runtimeOnly project(':frontend')
+
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testRuntimeOnly "org.hsqldb:hsqldb"
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
