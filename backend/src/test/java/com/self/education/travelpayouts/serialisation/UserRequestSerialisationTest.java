@@ -9,7 +9,7 @@ public class UserRequestSerialisationTest extends JsonTestBase<UserRequest> {
     @BeforeEach
     void beforeEach() {
         expected = TravelPayoutsHelper::nabeelaRequest;
-        fileName = "expected_user.json";
+        fileName = "expected_user_request.json";
         expectedType = UserRequest.class;
     }
 }

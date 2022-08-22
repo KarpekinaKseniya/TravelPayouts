@@ -103,6 +103,7 @@ public class TravelPayoutsHelper {
     public static UserResponse nabeelaResponse() {
         //@formatter:off
         return UserResponse.builder()
+                .id(NABEELA_ID)
                 .name(NABEELA_NAME)
                 .email(NABEELA_EMAIL).build();
         //@formatter:on
