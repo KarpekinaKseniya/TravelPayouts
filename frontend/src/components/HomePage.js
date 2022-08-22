@@ -15,7 +15,7 @@ class HomePage extends Component {
                     transform: 'translate(-50%, -50%)'
                 }}>
                     <ButtonGroup className="me-lg-5">
-                        <Button variant="outline-primary" className="btn-lg" style={width}>Partnership
+                        <Button variant="outline-primary" className="btn-lg" style={width} onClick={() =>  window.location.href='/partnership-programs'}>Partnership
                             Programs</Button> {' '}
                     </ButtonGroup>
                     <ButtonGroup>
