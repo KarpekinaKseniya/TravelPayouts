@@ -28,7 +28,7 @@ class HomePage extends Component {
                     transform: 'translate(-50%, -50%)'
                 }}>
                     <ButtonGroup className="me-lg-5">
-                        <Button variant="outline-primary" className="btn-lg" style={width}>Users</Button> {' '}
+                        <Button variant="outline-primary" className="btn-lg" style={width} onClick={() =>  window.location.href='/users'}>Users</Button> {' '}
                     </ButtonGroup>
                     <ButtonGroup>
                         <Button variant="outline-warning" className="btn-lg" style={width}>Block User
