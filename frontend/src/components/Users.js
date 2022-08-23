@@ -7,6 +7,7 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import UserInfo from "./UserInfo";
+import CreateUser from "./CreateUser";
 
 const columns = [
     {
@@ -61,9 +62,11 @@ class Users extends Component {
 
 
     render() {
-        return (<>
+        return (
+            <div>
                 <Card style={{width: '90rem', marginLeft: '15rem'}}>
                     <Card.Body>
+                        <CreateUser />
                         <BootstrapTable
                             striped
                             hover
@@ -83,7 +86,7 @@ class Users extends Component {
                     </Modal.Header>
                     <Modal.Body><UserInfo user={this.state.user}/></Modal.Body>
                 </Modal>
-            </>
+            </div>
         );
     }
 }
