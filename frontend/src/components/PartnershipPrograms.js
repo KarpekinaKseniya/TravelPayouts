@@ -7,8 +7,9 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import Card from 'react-bootstrap/Card';
 import InputGroup from 'react-bootstrap/InputGroup'
 import Form from 'react-bootstrap/Form'
-import {BsSearch} from "react-icons/bs";
+import {BsHouseDoorFill, BsSearch} from "react-icons/bs";
 import {findAllPartnerShipPrograms} from "../actions/ProgramsActions";
+import Button from "react-bootstrap/Button";
 
 const columns = [
     {
@@ -65,6 +66,9 @@ class PartnershipPrograms extends Component {
                         pagination={paginationFactory({sizePerPage: 10})}
                     />
                 </Card.Body>
+                <Button variant="secondary" onClick={() => window.location.href = '/home'}>
+                    Go Home <BsHouseDoorFill/>
+                </Button>
             </Card>
         );
     }

@@ -9,6 +9,10 @@ import Modal from 'react-bootstrap/Modal';
 import UserInfo from "./UserInfo";
 import CreateUser from "./CreateUser";
 import {findAllUsers} from "../actions/UsersActions";
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Button from "react-bootstrap/Button";
+import {IoIosHome} from "react-icons/io";
 
 const columns = [
     {
@@ -57,7 +61,13 @@ class Users extends Component {
             <div>
                 <Card style={{width: '90rem', marginLeft: '15rem'}}>
                     <Card.Body>
-                        <CreateUser/>
+                        <ButtonToolbar className="justify-content-between">
+                            <ButtonGroup aria-label="First group"><CreateUser/></ButtonGroup>
+                            <ButtonGroup>
+                                <Button className="mb-3" variant="dark"
+                                        onClick={() => window.location.href = '/home'}><IoIosHome/></Button>
+                            </ButtonGroup>
+                        </ButtonToolbar>
                         <BootstrapTable
                             striped
                             hover
