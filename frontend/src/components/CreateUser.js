@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import {createUser} from "../actions/UsersActions";
 
 class CreateUser extends Component {
 
@@ -28,14 +29,7 @@ class CreateUser extends Component {
                 email: event.target.email.value,
                 name: event.target.name.value
             }
-            const response = await fetch('/travel-payouts/v1/user', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(user),
-            });
+            const response = await createUser(user);
             const body = await response.json();
             if (response.status === 201) {
                 alert('User created success with id = ' + body);

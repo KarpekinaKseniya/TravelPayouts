@@ -8,6 +8,7 @@ import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import UserInfo from "./UserInfo";
 import CreateUser from "./CreateUser";
+import {findAllUsers} from "../actions/UsersActions";
 
 const columns = [
     {
@@ -35,19 +36,9 @@ class Users extends Component {
         }
     }
 
-    async findAllUsers() {
-        const response = await fetch('/travel-payouts/v1/users');
-        const body = await response.json();
-        this.setState({users: body});
-    }
-
-    async handleChange(event) {
-        let value = event.target.value;
-        await this.findAllUsers(value);
-    }
-
     async componentDidMount() {
-        await this.findAllUsers(null);
+        const body = await findAllUsers();
+        this.setState({users: body});
     }
 
     tableRowEvents = {
@@ -66,11 +57,11 @@ class Users extends Component {
             <div>
                 <Card style={{width: '90rem', marginLeft: '15rem'}}>
                     <Card.Body>
-                        <CreateUser />
+                        <CreateUser/>
                         <BootstrapTable
                             striped
                             hover
-                            keyField={"title"}
+                            keyField={"email"}
                             data={this.state.users}
                             columns={columns}
                             loading={true}

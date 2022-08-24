@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Table from 'react-bootstrap/Table';
+import {findAllUserPrograms} from "../actions/UsersActions";
 
 class UserInfo extends Component {
 
@@ -8,16 +9,10 @@ class UserInfo extends Component {
         hasPrograms: false
     }
 
-    async findAllUserPrograms(id) {
-        const url = '/travel-payouts/v1/user/' + id + '/programs';
-        const response = await fetch(url);
-        const body = await response.json();
+    async componentDidMount() {
+        const body = await findAllUserPrograms(this.props.user.id);
         const hasSubscriptions = body.length !== 0;
         this.setState({programs: body, hasPrograms: hasSubscriptions});
-    }
-
-    async componentDidMount() {
-        await this.findAllUserPrograms(this.props.user.id);
     }
 
 

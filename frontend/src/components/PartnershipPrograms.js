@@ -8,6 +8,7 @@ import Card from 'react-bootstrap/Card';
 import InputGroup from 'react-bootstrap/InputGroup'
 import Form from 'react-bootstrap/Form'
 import {BsSearch} from "react-icons/bs";
+import {findAllPartnerShipPrograms} from "../actions/ProgramsActions";
 
 const columns = [
     {
@@ -29,20 +30,15 @@ class PartnershipPrograms extends Component {
         programs: []
     }
 
-    async findAllPartnerShipPrograms(title) {
-        const param = "/" + (title != null ? title : '');
-        const response = await fetch('/travel-payouts/v1/partnership-programs' + param);
-        const body = await response.json();
+    async handleChange(event) {
+        let value = event.target.value;
+        const body = await findAllPartnerShipPrograms(value);
         this.setState({programs: body});
     }
 
-    async handleChange(event) {
-        let value = event.target.value;
-        await this.findAllPartnerShipPrograms(value);
-    }
-
     async componentDidMount() {
-        await this.findAllPartnerShipPrograms(null);
+        const body = await findAllPartnerShipPrograms(null);
+        this.setState({programs: body});
     }
 
     render() {
