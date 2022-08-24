@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import {findAllUsers} from "../actions/UsersActions";
 import {findAllPartnerShipPrograms} from "../actions/ProgramsActions";
 import {changeSubscriptionStatus} from "../actions/SubscriptionAction";
+import {NotificationManager} from "react-notifications";
 
 class ChangeSubscriptionStatus extends Component {
 
@@ -30,16 +31,21 @@ class ChangeSubscriptionStatus extends Component {
     }
 
     async handleSubmit(event) {
+        event.preventDefault();
+        event.stopPropagation();
         const userEmail = event.target.user.value;
         const programTitle = event.target.program.value;
         const subscribeStatus = event.target.status.value;
         const response = await changeSubscriptionStatus(userEmail, programTitle, subscribeStatus);
         if (response.status === 200) {
-            alert('Subscription status is changed successful.');
+            await NotificationManager.success('Subscription status is changed successful.', 'Success', 2500);
         } else {
             const body = await response.json();
-            alert('Subscription status didn\'t change.\nError status = ' + response.status + '.\nError message = ' + body.message);
+            await NotificationManager.error('Subscription status didn\'t change.\nError status = ' + response.status + '.\nError message = ' + body.message, 'Error', 2500);
         }
+        setTimeout(function () {
+            window.location.reload()
+        }, 2400);
     }
 
     render() {

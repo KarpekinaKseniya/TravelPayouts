@@ -55,7 +55,6 @@ class Users extends Component {
         this.setState({showUserInfo: false});
     }
 
-
     render() {
         return (
             <div>

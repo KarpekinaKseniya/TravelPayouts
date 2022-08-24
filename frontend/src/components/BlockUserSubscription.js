@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {findAllUserPrograms, findAllUsers} from "../actions/UsersActions";
 import {blockUserProgram} from "../actions/SubscriptionAction";
+import {NotificationManager} from 'react-notifications';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
@@ -39,15 +40,20 @@ class BlockUserSubscription extends Component {
     }
 
     async handleSubmit(event) {
+        event.preventDefault();
+        event.stopPropagation();
         const userEmail = event.target.user.value;
         const programTitle = event.target.program.value;
         const response = await blockUserProgram(userEmail, programTitle);
         if (response.status === 200) {
-            alert('User program is blocked successful.');
+            await NotificationManager.success('User program is blocked successful.', 'Success', 2500);
         } else {
             const body = await response.json();
-            alert('User program didn\'t block.\nError status = ' + response.status + '.\nError message = ' + body.message);
+            await NotificationManager.error('User program didn\'t block.\nError status = ' + response.status + '.\nError message = ' + body.message, 'Error', 2500);
         }
+        setTimeout(function () {
+            window.location.reload()
+        }, 2400);
     }
 
     render() {

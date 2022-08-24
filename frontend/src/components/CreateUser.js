@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import {createUser} from "../actions/UsersActions";
+import {NotificationManager} from "react-notifications";
 
 class CreateUser extends Component {
 
@@ -25,6 +26,8 @@ class CreateUser extends Component {
             event.preventDefault();
             event.stopPropagation();
         } else {
+            event.preventDefault();
+            event.stopPropagation();
             const user = {
                 email: event.target.email.value,
                 name: event.target.name.value
@@ -32,10 +35,13 @@ class CreateUser extends Component {
             const response = await createUser(user);
             const body = await response.json();
             if (response.status === 201) {
-                alert('User created success with id = ' + body);
+                NotificationManager.success('User created success with id = ' + body, 'Success', 2500);
             } else {
-                alert('User didn\'t created.\nError status = ' + response.status + '.\nError message = ' + body.message);
+                NotificationManager.error('User didn\'t created.\nError status = ' + response.status + '.\nError message = ' + body.message, 'Error', 2500);
             }
+            setTimeout(function () {
+                window.location.reload()
+            }, 2400);
         }
         this.setState({validated: true});
     }
