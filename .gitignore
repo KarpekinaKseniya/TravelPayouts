@@ -36,3 +36,9 @@ target/
 
 ### VS Code ###
 .vscode
+
+### Node ###
+/frontend/node_modules/
+/frontend/coverage
+/frontend/build/*
+/frontend/build_npm/*
