@@ -58,7 +58,7 @@ class Users extends Component {
     render() {
         return (
             <div>
-                <Card style={{width: '90rem', marginLeft: '15rem'}}>
+                <Card>
                     <Card.Body>
                         <ButtonToolbar className="justify-content-between">
                             <ButtonGroup aria-label="First group"><CreateUser/></ButtonGroup>

@@ -43,7 +43,7 @@ class PartnershipPrograms extends Component {
 
     render() {
         return (
-            <Card style={{width: '90rem', marginLeft: '15rem'}}>
+            <Card>
                 <Card.Body>
                     <Card.Title>Partnership Programs</Card.Title>
                     <InputGroup className="mb-3">
