@@ -71,3 +71,19 @@ jacocoTestReport {
         }))
     }
 }
+
+task stage(type: Copy, dependsOn: ['clean', 'build', 'jar']) {
+    from 'build/libs/backend-0.0.1-SNAPSHOT.jar'
+    into project.rootDir
+    rename {
+        'app.jar'
+    }
+}
+stage.mustRunAfter(clean)
+
+gradle.taskGraph.whenReady {
+    taskGraph ->
+        if (taskGraph.hasTask(stage)) {
+            test.enabled = false
+        }
+}

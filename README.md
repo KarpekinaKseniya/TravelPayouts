@@ -1,6 +1,16 @@
 # Travel Payouts
 
 For starting application prefer docker-compose, but you also can use gradle.
+Also configure Heroku web link you can see at column about(the site goes to sleep when not used for a long time, so you
+may have to wait).
+</br>
+Backend side coverage by unit and integration tests.
+</br>
+For looking tests coverage you can use gradle command(Report is in /build/reports/jacoco/test/html/index.html)
+
+````
+gradle jacocoTestReport
+````
 
 ### Gradle Instruction
 
